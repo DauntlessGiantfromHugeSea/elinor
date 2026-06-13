@@ -119,17 +119,15 @@ h3 {
 
 .hero-note {
   position: absolute;
-  font-size: clamp(.9rem, 1.7vw, 1.25rem);
+  font-size: clamp(.8rem, 1.5vw, 1.1rem);
   color: var(--ink);
+  line-height: 1.05;
   max-width: 9em;
-  /* weiße Aura, damit die Schrift auf jedem Bildbereich lesbar bleibt */
-  text-shadow:
-    0 0 6px #fff, 0 0 6px #fff, 0 0 3px #fff,
-    0 0 12px #fff, 1px 1px 0 #fff, -1px -1px 0 #fff;
   pointer-events: none;
 }
-.hero-note--prof { top: 6%; right: 4%; transform: rotate(-7deg); text-align: center; }
-.hero-note--portrait { bottom: 9%; right: 5%; transform: rotate(6deg); }
+/* sitzen wie in der Vorlage schlicht schwarz auf dem hellen Rollkragen */
+.hero-note--prof { top: 40%; left: 27%; transform: rotate(-8deg); text-align: center; }
+.hero-note--portrait { top: 57%; left: 12%; transform: rotate(-4deg); }
 
 .ich-bin {
   font-family: "Curt Bloch", cursive;
@@ -231,6 +229,16 @@ figcaption {
   font-size: .82rem;
   color: var(--muted);
   line-height: 1.4;
+}
+
+/* dezenter Bild-Effekt: sanftes Zoomen + weicher Schatten beim Hover */
+.project figure { overflow: hidden; }
+.project figure img {
+  transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .6s ease;
+  will-change: transform;
+}
+@media (hover: hover) {
+  .project figure:hover img { transform: scale(1.035); }
 }
 
 .note-label {
