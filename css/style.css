@@ -119,12 +119,17 @@ h3 {
 
 .hero-note {
   position: absolute;
-  font-size: clamp(.85rem, 1.6vw, 1.15rem);
-  transform: rotate(-7deg);
+  font-size: clamp(.9rem, 1.7vw, 1.25rem);
+  color: var(--ink);
   max-width: 9em;
+  /* weiße Aura, damit die Schrift auf jedem Bildbereich lesbar bleibt */
+  text-shadow:
+    0 0 6px #fff, 0 0 6px #fff, 0 0 3px #fff,
+    0 0 12px #fff, 1px 1px 0 #fff, -1px -1px 0 #fff;
+  pointer-events: none;
 }
-.hero-note--prof { top: 16%; left: -4%; color: var(--ink); }
-.hero-note--portrait { bottom: 14%; right: 6%; transform: rotate(6deg); }
+.hero-note--prof { top: 6%; right: 4%; transform: rotate(-7deg); text-align: center; }
+.hero-note--portrait { bottom: 9%; right: 5%; transform: rotate(6deg); }
 
 .ich-bin {
   font-family: "Curt Bloch", cursive;
@@ -146,18 +151,21 @@ h3 {
 .toc ol {
   list-style: none;
   margin: 0; padding: 0;
-  columns: 2;
-  column-gap: clamp(24px, 4vw, 60px);
-  max-width: 30ch;
+  max-width: 22ch;
 }
 .toc li {
-  padding: .32em 0;
-  border-bottom: 1px solid #e4e4e4;
-  break-inside: avoid;
+  padding: .3em 0;
   display: flex;
-  gap: .7em;
+  gap: .9em;
+  align-items: baseline;
 }
-.toc li span { color: var(--green); font-weight: 700; width: 1.4em; }
+.toc li span {
+  color: var(--green);
+  font-weight: 700;
+  min-width: 1.6em;
+  text-align: right;
+  flex: 0 0 auto;
+}
 .toc a { text-decoration: none; }
 .toc a:hover { color: var(--green); }
 
@@ -272,26 +280,6 @@ figcaption {
 }
 
 /* =========================================================
-   FOOTER
-   ========================================================= */
-.site-footer {
-  background: var(--ink);
-  color: #fff;
-  padding-block: clamp(60px, 9vw, 120px);
-  margin-top: var(--sp);
-}
-.site-footer .wrap { display: grid; gap: 1.4rem; }
-.site-footer h2 {
-  font-family: "Curt Bloch", cursive;
-  font-weight: 400;
-  font-size: clamp(2rem, 7vw, 4.5rem);
-  line-height: .95;
-  margin: 0;
-}
-.site-footer a { color: var(--green); text-decoration: none; }
-.site-footer .meta { color: #9a9a9a; font-size: .85rem; }
-
-/* =========================================================
    RESPONSIVE
    ========================================================= */
 @media (max-width: 860px) {
@@ -306,7 +294,6 @@ figcaption {
 }
 
 @media (max-width: 520px) {
-  .toc ol { columns: 1; }
   .g3, .g4 { grid-template-columns: repeat(2, 1fr); }
   .hero-note--prof { left: 0; }
 }
