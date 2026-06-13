@@ -6,13 +6,19 @@ Farbwelt (Palucca-Lime) und die **Originalschriften** aus der Vorlage, ist
 aber als eigenständiges, modernes Webdesign mit viel Weißraum umgesetzt –
 ähnlich, aber nicht identisch.
 
-## Struktur
+## Aufbau / Ansatz
+
+Die Seite ist ein **koordinatengetreuer Nachbau**: Texte, Schriftgrößen,
+Farben, Vektorflächen und Bildpositionen wurden direkt aus der PDF ausgelesen
+und 1:1 platziert. Alles ist als echtes HTML mit den Originalschriften umgesetzt
+und skaliert proportional mit der Breite (CSS `cqw`-Einheiten + `container-type`),
+ist also voll responsiv.
 
 ```
-index.html        – die komplette Seite
+index.html        – die komplette Seite (beide PDF-Seiten als „Bühnen")
 css/
   fonts.css       – @font-face-Einbindung der Originalschriften
-  style.css       – Layout, Responsive-Grid, Weißraum, Typo
+  stage.css       – maßstabsgetreues Layout, Effekte
 fonts/            – Originalschriften als WOFF2 (aus den .otf/.ttc konvertiert)
 assets/           – aus der PDF extrahierte Bilder (mit Transparenz)
 ```
