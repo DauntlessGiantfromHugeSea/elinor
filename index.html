@@ -464,20 +464,7 @@
   </div>
 </section>
 
-<!-- ============================ FOOTER ============================ -->
-<footer class="site-footer">
-  <div class="wrap">
-    <h2>Danke fürs Durchscrollen.</h2>
-    <p class="lede" style="color:#cfcfcf;">
-      Lust auf ein Projekt zusammen? Schreib mir gern.
-    </p>
-    <p><a href="mailto:hello@elinor.design">hello@elinor.design</a></p>
-    <p class="meta">© <span id="year"></span> Elinor — Portfolio. Alle Arbeiten und Bilder stammen aus der Portfolio-Vorlage.</p>
-  </div>
-</footer>
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
   // sanfte Einblendung beim Scrollen
   const io = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
